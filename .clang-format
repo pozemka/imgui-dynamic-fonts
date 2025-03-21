@@ -1,0 +1,74 @@
+﻿IndentAccessModifiers: false
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+StatementAttributeLikeMacros: [emit]
+StatementMacros: [Q_UNUSED]
+AlignEscapedNewlines: DontAlign
+AlignOperands: true
+AlignTrailingComments: true
+AllowAllArgumentsOnNextLine: false
+AllowAllConstructorInitializersOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Inline
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: 'Yes'
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeBinaryOperators: All
+BreakBeforeBraces: Mozilla
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+ColumnLimit: '95'
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+DerivePointerAlignment: true
+EmptyLineBeforeAccessModifier: LogicalBlock
+ForEachMacros:
+- foreach
+- Q_FOREACH
+- BOOST_FOREACH
+IncludeBlocks: Regroup
+IncludeCategories:
+  # Headers in "" with extension.
+  - Regex:           '"([A-Za-z0-9.\-_])+"'
+    Priority:        1
+  # Headers in "" with extension and with /.
+  - Regex:           '"([A-Za-z0-9./\-_])+"'
+    Priority:        2
+  # Headers in <> from Qt.
+  - Regex:           '<Q([A-Za-z0-9\-\_\/])+(\.h)?>'
+    Priority:        5
+    CaseSensitive:   true
+  # Headers in <> from specific external libraries.
+  - Regex:           '<(catch2|boost)\/'
+    Priority:        6
+  # Headers in <> from editor itself
+  - Regex:           '<(editor|editor)\/'
+    Priority:        3
+  # Headers in <> with extension.
+  - Regex:           '<([A-Za-z0-9\-_/.])+\.h.{0,2}>'
+    Priority:        4
+  # Headers in <> without extension.
+  - Regex:           '<([a-z0-9-_])+>'
+    CaseSensitive:   true
+    Priority:        7  
+IndentCaseBlocks : false
+IndentCaseLabels : true
+IndentPPDirectives: AfterHash
+IndentWidth: '4'
+IndentWrappedFunctionNames: true
+Language: Cpp
+MaxEmptyLinesToKeep: '2'
+PointerAlignment: Left
+ReferenceAlignment: Left
+ReflowComments: false # not consistent when commenting and then uncommenting code
+SpaceBeforeCpp11BracedList: true
+Standard: c++20
+TabWidth: '4'
+UseTab: Never

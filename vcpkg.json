@@ -1,0 +1,12 @@
+{
+    "name": "imgui-dpi",
+    "dependencies": [
+        "fmt",
+        "spdlog",
+        "glfw3",
+        "glslang",
+        "gl3w",
+        "freetype",
+        "msdfgen"
+    ]
+}
