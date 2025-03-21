@@ -50,6 +50,7 @@ void drawSystemWindow()
         ImGui::PushFont(font_procedural);
     }
     ImGui::PushFontSize(local_font_size);
+    ImGui::Button(fmt::format("{}##2",test_text).c_str());
     const float line_h = ImGui::GetTextLineHeightWithSpacing();
     ImVec2 size(ImGui::GetContentRegionAvail().x, line_h * 3.f);
     ImGui::Dummy(size);
@@ -57,7 +58,6 @@ void drawSystemWindow()
     ImVec2      p1        = ImGui::GetItemRectMax();
 
     
-    ImGui::Button(fmt::format("{}##2",test_text).c_str());
     auto* draw_list = ImGui::GetWindowDrawList();
     draw_list->PushClipRect(p0, p1);
 
@@ -140,15 +140,18 @@ void drawSystemWindow()
                        IM_COL32_WHITE);
 
     draw_list->AddText(p0 + ImVec2 {20, line_h * 1}, IM_COL32_WHITE, test_text.c_str());
-
-
+    
     draw_list->PopClipRect();
-    //TODO: Easily disable shader? Load default one?
+
     ImGui::Button(fmt::format("{}##3",test_text).c_str());
+
+    draw_list->AddCallback(ImDrawCallback_ResetRenderState, nullptr);
+    
     ImGui::PopFontSize();
     if (use_proc_font) {
         ImGui::PopFont();
     }
+    ImGui::Button(fmt::format("{}##4",test_text).c_str());
 
     // Debug comparison with built in Freetype font loader
     static bool once = false;
